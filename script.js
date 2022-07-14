@@ -7,6 +7,7 @@ let bars_container = document.getElementById("bars_container")
 let minRange = 1 ;
 let maxRange = 20;
 let height_factor = 20 ;
+let sleep_dur = 5;
 
 // Bar Count and Creating Array of same length
 
@@ -75,7 +76,7 @@ async function bubbleSort(array) {
             for(let k=0 ; k < array.length ;k++){
 
                 if(k!=j || k!=j+1)
-                    bars[k].style.backgroundColor = "aqua" ;
+                    bars[k].style.backgroundColor = "#ACEFD1" ;
             }
 
             if(array[j] > array[j+1]){
@@ -85,12 +86,12 @@ async function bubbleSort(array) {
                 array[j+1] = temp ;
 
                 bars[j].style.height = array[j]*height_factor + "px";
-                bars[j].style.backgroundColor = "lightgreen";
+                bars[j].style.backgroundColor = "#C08F03";
 
                 bars[j + 1].style.height = array[j + 1]*height_factor + "px";
-                bars[j + 1].style.backgroundColor = "lightgreen";
+                bars[j + 1].style.backgroundColor = "#C08F03";
 
-                await sleep(30);
+                await sleep(sleep_dur);
             }
         }
     }
